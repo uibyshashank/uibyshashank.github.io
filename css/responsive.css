@@ -1,0 +1,78 @@
+/* ==========================================================================
+   responsive.css — Tablet, mobile & motion-preference adjustments.
+   Breakpoints: ≤1200px (large laptop), ≤900px (tablet), ≤600px (mobile).
+   ========================================================================== */
+
+/* ---------- Large laptop / small desktop ---------- */
+@media (max-width: 1200px) {
+  :root {
+    --page-pad: 48px;
+    --section-pad: 96px;
+  }
+  .hero { padding: 120px 48px 90px; }
+  /* Scale floating previews down so the hero never feels crowded */
+  .fi-1 { width: 221px; height: 143px; }
+  .fi-2 { width: 203px; height: 134px; }
+  .fi-3 { width: 189px; height: 121px; }
+  .fi-4 { width: 194px; height: 127px; }
+  .fi-5 { width: 203px; height: 131px; }
+  .fi-6 { width: 207px; height: 134px; }
+  #about { gap: 60px; }
+  .contact-top { gap: 40px; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-links li:not(:last-child) { display: none; }
+
+  .hero { padding: 110px 24px 80px; }
+  .fi { display: none; }
+
+  #about {
+    grid-template-columns: 1fr;
+    padding: 64px 24px;
+    gap: 44px;
+  }
+  .about-photo-wrap { order: -1; }
+  .about-photo { width: 200px; height: 230px; }
+
+  #work { padding: 64px 24px; }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+
+  #contact { padding: 64px 24px 48px; }
+  .contact-top { grid-template-columns: 1fr; gap: 40px; }
+
+  .footer-row { flex-direction: column; gap: 16px; text-align: center; }
+
+  .modal { border-radius: 14px; }
+  .modal-header { padding: 24px 24px 18px; }
+  .modal-body { padding: 20px 24px 28px; }
+  .modal-title { font-size: 1.2rem; }
+
+  /* Resume modal tablet */
+  .resume-toolbar { padding: 10px 24px; }
+  .resume-viewer { padding: 16px; }
+  .resume-download span { display: none; }
+  .resume-download { padding: 7px 10px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .work-header { margin-bottom: 40px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

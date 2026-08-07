@@ -1,0 +1,210 @@
+/* ==========================================================================
+   typography.css — Content typography only.
+   Instrument Serif for display/editorial; Inter for everything functional.
+   (Component chrome — nav, buttons, cards, modals — keeps its text styles
+   inside the component rules in layout.css / hero.css.)
+   ========================================================================== */
+
+/* ---------- Display headings (Instrument Serif) ---------- */
+.about-hl {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 26px;
+}
+.about-hl em { font-style: italic; }
+
+.work-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.contact-hl {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--black);
+}
+.contact-hl em { font-style: italic; }
+
+/* ---------- Pull quote ---------- */
+.about-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--black);
+  line-height: 1.7;
+  border-left: 2px solid var(--black);
+  padding-left: 20px;
+  margin-top: 28px;
+}
+
+/* ---------- Marquee editorial strip ---------- */
+.m-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 36px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--black);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.m-item::after {
+  content: '·';
+  color: var(--gray);
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-left: 36px;
+}
+
+/* ---------- Project titles (Inter) ---------- */
+.proj-name {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pc-name {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.modal-title {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+/* ---------- Labels & metadata ---------- */
+.proj-cat,
+.modal-cat {
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pc-cat {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.c-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+/* ---------- Body copy ---------- */
+.about-p {
+  font-size: 0.92rem;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+.work-header p {
+  font-size: 0.86rem;
+  color: var(--gray);
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+
+.contact-sub {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.c-desc {
+  font-size: 0.8rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+
+/* ---------- Contact / footer links ---------- */
+#c-email {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  transition: opacity 0.2s;
+}
+#c-email:hover { opacity: 0.55; }
+
+.c-phone {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 24px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+}
+.c-phone:hover { color: var(--black); }
+
+.f-copy {
+  font-size: 0.68rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.f-nav a {
+  font-size: 0.68rem;
+  color: var(--gray);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.f-nav a:hover { color: var(--black); }
+
+.f-top {
+  font-size: 0.68rem;
+  color: var(--gray);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.f-top:hover { color: var(--black); }
