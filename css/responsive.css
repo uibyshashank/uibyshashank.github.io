@@ -28,7 +28,15 @@
   .nav-links li:not(:last-child) { display: none; }
 
   .hero { padding: 110px 24px 80px; }
-  .fi { display: none; }
+
+  /* Keep hero previews visible on tablet — scale them down so the
+     cluster stays composed and clear of the centered name. */
+  .fi-1 { width: 178px; height: 115px; }
+  .fi-2 { width: 163px; height: 107px; }
+  .fi-3 { width: 152px; height: 97px; }
+  .fi-4 { width: 156px; height: 101px; }
+  .fi-5 { width: 163px; height: 105px; }
+  .fi-6 { width: 167px; height: 107px; }
 
   #about {
     grid-template-columns: 1fr;
@@ -60,6 +68,15 @@
 
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
+  /* Scale hero previews down further so the pair per side fits the
+     narrow viewport without colliding or being clipped. */
+  .fi-1 { width: 129px; height: 83px; }
+  .fi-2 { width: 118px; height: 77px; }
+  .fi-3 { width: 110px; height: 70px; }
+  .fi-4 { width: 112px; height: 73px; }
+  .fi-5 { width: 118px; height: 76px; }
+  .fi-6 { width: 121px; height: 77px; }
+
   .proj-grid { grid-template-columns: 1fr; }
   .work-header { margin-bottom: 40px; }
 }

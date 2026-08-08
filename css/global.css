@@ -53,6 +53,24 @@ img {
   display: block;
 }
 
+/* ---------- Asset protection (CSS-level) ---------- */
+img, video, svg {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Prevent accidental text selection on decorative / UI chrome elements */
+nav, .hero, .hero-name, .hero-sub, .fi,
+.marquee-wrap, .marquee-track, .m-item,
+.proj-card-ov, .pc-name, .pc-cat,
+.proj-name, .proj-cat,
+.modal-title, .modal-cat, .modal-tag,
+.c-label, .f-copy, .f-nav, .f-top,
+.footer-row {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* ---------- Accessibility ---------- */
 ::selection {
   background: var(--black);
