@@ -43,6 +43,7 @@
     var raf = null;
 
     function apply(dx, dy) {
+      if (window.innerWidth <= 768) return;
       floats.forEach(function (f, i) {
         var tx = dx * depths[i];
         var ty = dy * depths[i];
@@ -56,6 +57,7 @@
     }
 
     function onMove(e) {
+      if (window.innerWidth <= 768) return;
       var cx = window.innerWidth / 2;
       var cy = window.innerHeight / 2;
       var dx = (e.clientX - cx) / cx;
@@ -66,6 +68,7 @@
 
     document.addEventListener('mousemove', onMove, { passive: true });
     hero.addEventListener('mouseleave', function () {
+      if (window.innerWidth <= 768) return;
       if (raf) window.cancelAnimationFrame(raf);
       floats.forEach(function (f, i) { f.style.transform = baseTransforms[i]; });
     });
