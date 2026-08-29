@@ -218,6 +218,14 @@ nav.scrolled {
   display: block;
 }
 .proj-card:hover img { transform: scale(1.06); }
+
+/* Transparent full-card link overlay (for the UX Case Study card) */
+.pc-card-main {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .proj-card-ov {
   position: absolute;
   inset: 0;
@@ -226,6 +234,45 @@ nav.scrolled {
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+.pc-links {
+  pointer-events: auto;
+}
+
+.pc-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pc-link {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s, opacity 0.2s;
+  line-height: 1;
+  white-space: nowrap;
+}
+.pc-link:hover {
+  color: white;
+  opacity: 1;
+}
+.pc-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.pc-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+  line-height: 1;
 }
 
 /* ---------- Modal ---------- */

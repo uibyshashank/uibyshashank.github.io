@@ -192,6 +192,9 @@
 @media (max-width: 600px) {
   .proj-grid { grid-template-columns: 1fr; }
   .work-header { margin-bottom: 40px; }
+  .pc-links { gap: 6px; }
+  .pc-link { font-size: 0.56rem; }
+  .pc-sep { font-size: 0.6rem; }
 }
 
 /* ---------- Reduced motion ---------- */
