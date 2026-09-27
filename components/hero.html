@@ -1,0 +1,33 @@
+<!-- ======================================================================
+  COMPONENT: hero.html
+  ----------------------------------------------------------------------
+  Source partial for the hero section.
+
+  This file is the SOURCE OF TRUTH for the hero. index.html is the
+  assembled page (no build step, so it must contain the final markup).
+  To edit the hero: update this file, then paste the result into
+  index.html in place of the existing <section class="hero" id="home">…</section>.
+
+  Name lockup:
+  · .hero-name-first  → Inter Display (extra-bold) via the variable Inter
+                        opsz axis (font-optical-sizing) — renders "SHASHANK"
+  · .hero-name-last   → Instrument Serif (regular) — renders "RADHARAPU"
+
+  Hero previews use downscaled thumbnails from assets/images/cards/ (~85%
+  smaller than the full-size screenshots used in the modals). Cards are
+  exported at 2x (960px wide) so they stay crisp on Retina displays.
+  ====================================================================== -->
+<section class="hero" id="home">
+  <div class="fi fi-1"><img src="assets/images/cards/veda_home.png" alt="Veda Bharat" width="960" height="609" decoding="async"></div>
+  <div class="fi fi-2"><img src="assets/images/cards/analytics.png" alt="Employee Dashboard" width="960" height="1031" decoding="async"></div>
+  <div class="fi fi-3"><img src="assets/images/cards/leads.png" alt="Lead Tracking Dashboard" width="960" height="746" decoding="async"></div>
+  <div class="fi fi-4"><img src="assets/images/cards/maintenance.png" alt="Maintenance Officer Dashboard" width="960" height="682" decoding="async"></div>
+  <div class="fi fi-5"><img src="assets/images/cards/ccs.png" alt="Planet Green CRM" width="960" height="608" decoding="async"></div>
+  <div class="fi fi-6"><img src="assets/images/cards/home.png" alt="Planet Green Website" width="960" height="698" decoding="async"></div>
+
+  <h1 class="hero-name">
+    <span class="hero-name-first">Shashank</span>
+    <span class="hero-name-last">Radharapu</span>
+  </h1>
+  <p class="hero-sub">UI/UX Designer &nbsp;&#183;&nbsp; Based in India</p>
+</section>

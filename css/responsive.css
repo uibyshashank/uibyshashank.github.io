@@ -1,0 +1,200 @@
+/* ==========================================================================
+   responsive.css — Tablet, mobile & motion-preference adjustments.
+   Breakpoints: ≤1200px (large laptop), ≤900px (tablet), ≤600px (mobile).
+   ========================================================================== */
+
+/* ---------- Large laptop / small desktop ---------- */
+@media (max-width: 1200px) {
+  :root {
+    --page-pad: 48px;
+    --section-pad: 96px;
+  }
+  .hero { padding: 120px 48px 90px; }
+  /* Scale floating previews down so the hero never feels crowded */
+  .fi-1 { width: 221px; height: 143px; }
+  .fi-2 { width: 203px; height: 134px; }
+  .fi-3 { width: 189px; height: 121px; }
+  .fi-4 { width: 194px; height: 127px; }
+  .fi-5 { width: 203px; height: 131px; }
+  .fi-6 { width: 207px; height: 134px; }
+  .contact-top { gap: 40px; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-links li:not(:last-child) { display: none; }
+
+  .hero { padding: 110px 24px 80px; }
+
+  /* Keep hero previews visible on tablet — scale them down so the
+     cluster stays composed and clear of the centered name. */
+  .fi-1 { width: 178px; height: 115px; }
+  .fi-2 { width: 163px; height: 107px; }
+  .fi-3 { width: 152px; height: 97px; }
+  .fi-4 { width: 156px; height: 101px; }
+  .fi-5 { width: 163px; height: 105px; }
+  .fi-6 { width: 167px; height: 107px; }
+
+  #about {
+    padding: 64px 24px;
+  }
+
+  #work { padding: 64px 24px; }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+
+  #vibe-coding { padding: 64px 24px; }
+  .vc-meta-strip { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; margin-bottom: 32px; }
+
+  #contact { padding: 64px 24px 48px; }
+  .contact-top { grid-template-columns: 1fr; gap: 40px; }
+
+  .footer-row { flex-direction: column; gap: 16px; text-align: center; }
+
+  .modal { border-radius: 14px; }
+  .modal-header { padding: 24px 24px 18px; }
+  .modal-body { padding: 20px 24px 28px; }
+  .modal-title { font-size: 1.2rem; }
+}
+
+/* ---------- Mobile & Vertical Tablet (≤768px) ---------- */
+@media (max-width: 768px) {
+  /* Hero composition reflow for mobile viewports */
+  .hero {
+    min-height: clamp(540px, 85vh, 660px);
+    padding: 90px 16px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Centered typography lockup */
+  .hero-name {
+    font-size: clamp(1.8rem, 8.2vw, 3.2rem);
+    line-height: 1.05;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-name-first {
+    letter-spacing: -0.03em;
+  }
+
+  .hero-name-last {
+    letter-spacing: -0.015em;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.62rem, 2.2vw, 0.76rem);
+    letter-spacing: clamp(0.06em, 0.35vw, 0.14em);
+    margin-top: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    white-space: normal;
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  /* Mobile floating preview cards — arranged top & bottom around central text */
+  .fi {
+    position: absolute;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+
+  /* Top Cluster (above central name, safely below fixed navbar) */
+  .fi-1 {
+    width: clamp(76px, 24vw, 118px);
+    height: auto;
+    aspect-ratio: 960 / 609;
+    top: clamp(74px, 11vh, 92px);
+    left: clamp(10px, 3.5vw, 24px);
+    right: auto;
+    bottom: auto;
+    transform: rotate(-4deg);
+  }
+
+  .fi-3 {
+    width: clamp(72px, 22vw, 110px);
+    height: auto;
+    aspect-ratio: 960 / 746;
+    top: clamp(68px, 9vh, 84px);
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translateX(-50%) rotate(2deg);
+  }
+
+  .fi-2 {
+    width: clamp(76px, 24vw, 118px);
+    height: auto;
+    aspect-ratio: 960 / 1031;
+    top: clamp(74px, 11vh, 92px);
+    right: clamp(10px, 3.5vw, 24px);
+    left: auto;
+    bottom: auto;
+    transform: rotate(3.5deg);
+  }
+
+  /* Bottom Cluster (below subtitle) */
+  .fi-5 {
+    width: clamp(76px, 24vw, 118px);
+    height: auto;
+    aspect-ratio: 960 / 608;
+    bottom: clamp(24px, 5vh, 45px);
+    left: clamp(10px, 3.5vw, 24px);
+    right: auto;
+    top: auto;
+    transform: rotate(3deg);
+  }
+
+  .fi-4 {
+    width: clamp(72px, 22vw, 110px);
+    height: auto;
+    aspect-ratio: 960 / 682;
+    bottom: clamp(38px, 7vh, 60px);
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translateX(-50%) rotate(-2deg);
+  }
+
+  .fi-6 {
+    width: clamp(76px, 24vw, 118px);
+    height: auto;
+    aspect-ratio: 960 / 698;
+    bottom: clamp(24px, 5vh, 45px);
+    right: clamp(10px, 3.5vw, 24px);
+    left: auto;
+    top: auto;
+    transform: rotate(-3.5deg);
+  }
+}
+
+/* ---------- Mobile (≤600px) ---------- */
+@media (max-width: 600px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .work-header { margin-bottom: 40px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

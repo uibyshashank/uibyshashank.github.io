@@ -1,0 +1,92 @@
+/* ==========================================================================
+   hero.css — Hero section: name typography, badge, sub, floating images.
+   ========================================================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 60px 100px;
+  background: var(--white);
+}
+
+/* ---------- Badge ----------
+   Removed from the design — the "Available for work" chip is gone. */
+
+/* ---------- Name ----------
+   Two-typeface lockup — one cohesive editorial heading:
+   · SHASHANK   → Inter Display (extra-bold) — solid, structural anchor.
+                 Inter is loaded as a variable font; font-optical-sizing
+                 drives its opsz axis to the display range at this size,
+                 which is exactly what makes it "Inter Display".
+   · RADHARAPU  → Instrument Serif (regular) — light, editorial counterweight.
+   Same optical scale, aligned, tight tracking. The extra-bold/regular
+   contrast is the hierarchy; the shared scale binds the two lines. */
+.hero-name {
+  font-size: clamp(3.2rem, 9vw, 9rem);
+  line-height: 1.02;
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
+  user-select: none;
+}
+
+.hero-name-first {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 800;             /* Inter Display ExtraBold */
+  font-optical-sizing: auto;    /* opsz axis → display cut at large sizes */
+  letter-spacing: -0.03em;
+}
+
+.hero-name-last {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.015em;
+}
+
+.hero-sub {
+  font-size: 0.82rem;
+  color: var(--gray);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 22px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  font-weight: 400;
+}
+
+/* ---------- Floating preview images ----------
+   Tilted slightly toward the centered name. */
+.fi {
+  position: absolute;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.11);
+  z-index: 2;
+  will-change: transform;
+}
+.fi img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* All six cards — 3 left (fi-1, fi-3, fi-5), 3 right (fi-2, fi-4, fi-6)
+   arranged in an editorial cluster around the centred name. */
+.fi-1 { width: 248px; height: 160px; top: 12%;   left: 6%;   transform: rotate(-4deg); }
+.fi-2 { width: 227px; height: 149px; top: 10%;   right: 6%;  transform: rotate(3.5deg); }
+.fi-3 { width: 211px; height: 135px; top: 50%;   left: 4%;   transform: translateY(-50%) rotate(2deg); }
+.fi-4 { width: 216px; height: 140px; top: 50%;   right: 4%;  transform: translateY(-50%) rotate(-2deg); }
+.fi-5 { width: 227px; height: 146px; bottom: 14%; left: 7%;   transform: rotate(3deg); }
+.fi-6 { width: 232px; height: 149px; bottom: 12%; right: 6%;  transform: rotate(-3.5deg); }
