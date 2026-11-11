@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://uibyshashank.github.io/$1",
+      "permanent": true
+    }
+  ]
 }
